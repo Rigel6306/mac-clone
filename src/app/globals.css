@@ -1,18 +1,45 @@
 @import "tailwindcss";
+@font-face {
+  font-family: "Regular";
+  src: url("/fonts/regular.otf");
+}
 
+@font-face {
+  font-family: "Medium";
+  src: url("/fonts/medium.otf");
+}
+
+@font-face {
+  font-family: "SemiBold";
+  src: url("/fonts/semibold.otf");
+}
+
+@font-face {
+  font-family: "Bold";
+  src: url("/fonts/bold.otf");
+}
 body{
   
   @apply bg-black m-0 p-0;
 
 }
 
-
+@theme {
+  --font-regular: "Regular";
+  --font-medium: "Medium";
+  --font-semibold: "SemiBold";
+  --font-bold: "Bold";
+  --color-primary: #0071e3;
+  --color-dark-100: #86868b;
+  --color-dark-200: #2e2e30;
+  --color-light-100: #adb5bd;
+}
 
 @layer components{
   header{
-    
+    @apply font-regular w-screen fixed top-0 left-0 p-10  bg-black max-h-1.5 flex justify-between items-center;
      nav{
-    @apply flex bg-black text-sm text-white mt-5 justify-between mx-4;
+    @apply w-screen flex text-sm text-white justify-between  items-center ;
     
       ul{
         @apply flex hidden gap-4 md:flex  ; 
@@ -20,5 +47,28 @@ body{
       }
     }
   }
+
+  #hero{
+   @apply mt-40 text-white flex justify-center items-center;
+
+   div{
+      @apply flex  flex-col items-center;
+
+     
+    h1{
+      @apply text-center text-5xl font-semibold;
+    }
+
+
+   }
+   button{
+    cursor: pointer;
+     @apply relative z-10 bg-primary text-white py-2 px-6 mt-10 lg:mt-0 mb-5 rounded-full font-semibold text-lg cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out;
+   }
+   p{
+    @apply font-bold text-gray-400 
+   }
+  }
+
  
 }

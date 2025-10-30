@@ -4,7 +4,7 @@ function NavBar() {
   return (
     <header >
         <nav className='s'>
-            <img src="/logo.svg" alt="Apple Logo" />
+            <img src="/logo.svg" alt="Apple Logo" className='h-10 w-10'/>
             <ul className=''>
                 {
                     [{lable:'store'},

@@ -10,7 +10,7 @@ function Hero() {
   }, [])
 
   return (
-    <section id='hero'>
+    <section id='hero' >
       <div className=" ">
         <h1>Mac Book Pro</h1>
         <img className='mx-auto w-2/3' src="title.png" alt="title" />

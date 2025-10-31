@@ -7,7 +7,7 @@ function NavBar() {
             <img src="/logo.svg" alt="Apple Logo" className='h-10 w-10'/>
             <ul className=''>
                 {
-                    [{lable:'store'},
+                    [{lable:'Store'},
                     {lable:'Mac'},
                     {lable:'Iphone'},
                     {lable:'Watch'},

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @font-face {
   font-family: "Regular";
   src: url("/fonts/regular.otf");
@@ -18,8 +19,9 @@
   font-family: "Bold";
   src: url("/fonts/bold.otf");
 }
-body{
-  
+
+body {
+
   @apply bg-black m-0 p-0 text-white;
 
 }
@@ -35,40 +37,88 @@ body{
   --color-light-100: #adb5bd;
 }
 
-@layer components{
-  header{
+@layer components {
+  header {
     @apply font-regular w-screen fixed top-0 left-0 p-10 z-50 bg-black max-h-1.5 flex justify-between items-center;
-     nav{
-    @apply w-screen flex text-sm text-white justify-between  items-center ;
-    
-      ul{
-        @apply flex hidden gap-4 md:flex font-semibold text-lg  ; 
-       
+
+    nav {
+      @apply w-screen flex text-sm text-white justify-between items-center;
+
+      ul {
+        @apply flex hidden gap-4 md:flex font-semibold text-lg;
+
       }
     }
   }
 
-  #hero{
-   @apply mt-40 text-white flex justify-center items-center;
+  #hero {
+    @apply mt-40 text-white flex justify-center items-center;
 
-   div{
-      @apply flex  flex-col items-center;
+    div {
+      @apply flex flex-col items-center;
 
-     
-    h1{
-      @apply text-center text-5xl font-semibold;
+
+      h1 {
+        @apply text-center text-5xl font-semibold;
+      }
+
+
     }
 
+    button {
+      cursor: pointer;
+      @apply relative bg-primary text-white py-2 px-6 mt-10 lg:mt-0 mb-5 rounded-full font-semibold text-lg cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out;
+    }
 
-   }
-   button{
-    cursor: pointer;
-     @apply relative  bg-primary text-white py-2 px-6 mt-10 lg:mt-0 mb-5 rounded-full font-semibold text-lg cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out;
-   }
-   p{
-    @apply font-bold text-gray-400 
-   }
+    p {
+      @apply font-bold text-gray-400
+    }
   }
 
- 
+  #productCanvas {
+    @apply min-h-[93vh] relative flex flex-col items-center  ;
+    .controls {
+      @apply absolute bottom-20 font-semibold flex flex-col items-center
+    }
+
+    .colorControlerContainer {
+      @apply flex justify-center mt-5 gap-5 z-50;
+
+      .colorControler {
+        @apply flex justify-center items-center w-40 rounded-full gap-5 bg-gray-600 p-5;
+
+        .silver {
+          @apply h-10 w-10 rounded-full cursor-pointer  transition-all duration-300 ease-in-out;
+        }
+
+        .spaceBlack {
+          @apply bg-neutral-900 h-10 w-10 rounded-full cursor-pointer  transition-all duration-300 ease-in-out;
+        }
+
+      
+      }
+
+         .activeColor {
+          @apply ring-5 size-5 ring-light-100;
+        }
+       
+        .activeSize {
+          @apply ring-5 size-5 ring-offset-dark-200;
+        }
+      .sizeControlerContainer {
+        @apply flex justify-center items-center w-40 rounded-full gap-5 bg-gray-600 p-5  transition-all duration-600 ease-in-out;
+
+        .silver {
+          @apply  h-12 w-12 flex items-center justify-center rounded-full cursor-pointer transition-all duration-600 ease-in-out;
+        }
+
+        
+      }
+    }
+
+    #canvas{
+       @apply !w-full  !h-[90vh] lg:!h-[90vh] relative z-40;
+    }
+  }
+
 }

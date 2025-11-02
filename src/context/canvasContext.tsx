@@ -13,17 +13,17 @@ import { createContext,ReactNode,useState } from "react"
  export const canvasContext = createContext<CanvasContextType> ({
   color: '#2e2c2e',
   setColor: () => {},
-  scale: 0.08,
+  scale: 0.03,
   setScale: () => {},
   reset: () => {},
 });
 const CanvasContext = ({children}:{children:ReactNode}) => {
 
-  const [color, setColor] = useState('#2e2c2e');
+  const [color, setColor] = useState('spacegray');
   const [scale,setScale] = useState(0.08);
 
   const reset = ()=>{
-    setColor('#2e2c2e')
+    setColor('#123123')
     setScale(0.08)
   }
 

@@ -1,31 +1,38 @@
 import { PresentationControls } from "@react-three/drei";
-import { useRef } from "react"
-import MacbookModel16 from "../models/Macbook-14";
+import type { ComponentProps } from "react";
+import { useRef } from "react";
+import { Group, Mesh } from "three";
+import MacbookModel16 from "../models/Macbook-16";
 import MacbookModel14 from "../models/Macbook-14";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-const ANIMATION_DURATION = 1
-const OFFSET_DISTENCE =9
+const ANIMATION_DURATION = 1;
+const OFFSET_DISTENCE = 9;
 
-const fadeMeshes = (group, opacity) =>{
-    if(opacity) return 
-    group.traverse((child)=>{
-        if(child.isMesh){
-            child.material.transparent = true
-            gsap.to(child.meterial, {opacity,duration:ANIMATION_DURATION} )
+const fadeMeshes = (group: Group | null, opacity: number) => {
+    if (!group) return;
+    group.traverse((child) => {
+        if (child instanceof Mesh) {
+            child.material.transparent = true;
+            gsap.to(child.material, { opacity, duration: ANIMATION_DURATION });
         }
-    })
-}
+    });
+};
 
-const moveGroup = (group,x)=>{
-    if(!group) return
-    gsap.to(group.position,{x,duration:ANIMATION_DURATION})
-}
+const moveGroup = (group: Group | null, x: number) => {
+    if (!group) return;
+    gsap.to(group.position, { x, duration: ANIMATION_DURATION });
+};
 
-function ModelSwitcher({scale,isMobile}) {
-    const smallMacBookRef = useRef()
-    const largeMacBookRef = useRef();
+type ModelSwitcherProps = {
+    scale: number;
+    isMobile: boolean;
+};
+
+function ModelSwitcher({ scale, isMobile }: ModelSwitcherProps) {
+    const smallMacBookRef = useRef<Group>(null);
+    const largeMacBookRef = useRef<Group>(null);
 
     const showLargeMacBook = scale ===0.08 || scale===0.05
 
@@ -49,15 +56,10 @@ function ModelSwitcher({scale,isMobile}) {
     const controlsConfig = {
         snap:true,
         speed:1,
-        zooom:1,
-        polar:[-Math.PI,Math.PI],
-        azimuth:[-Infinity,Infinity],
-        config:{
-            mass:1,
-            tension:0,
-            friction:1
-        }
-    }//defines the physics
+        zoom:1,
+        polar:[-Math.PI,Math.PI] as const,
+        azimuth:[-Infinity,Infinity] as const,
+    } satisfies ComponentProps<typeof PresentationControls>;
   return (
    <>
    <PresentationControls {...controlsConfig}>

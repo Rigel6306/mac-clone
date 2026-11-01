@@ -8,7 +8,7 @@ Source: https://sketchfab.com/3d-models/macbook-pro-m3-16-inch-2024-8e34fc2b3031
 Title: macbook pro M3 16 inch 2024
 */
 
-import React from 'react'
+import { useEffect } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 import { useCanvasContext } from '@/hooks/useCanvasContext'
 import {noChangeParts} from '../../const/constents'

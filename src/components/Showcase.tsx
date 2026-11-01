@@ -57,7 +57,7 @@ const Showcase = () => {
               <p className="mt-4" >Introducing <span className="font-bold">M4, the next generation of Apple Silicon.</span> M4 powers</p>
 
               <p>It drives Apple Intelligence on Ipad Pro, so you can write,create and accomplish more with ease.
-                All in a design that's unbelievabaly thin,light,and powerfull.
+                All in a design that&apos;s unbelievabaly thin,light,and powerfull.
               </p>
 
               <p>A brand-new display engine delivers breathtaking precision,color,accurecy, and brightness. And a next0gen GPU with harware accelerated ray tracing brings console-level graphics to your fingertip</p>

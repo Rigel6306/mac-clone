@@ -15,7 +15,7 @@ const ProductCanvas = () => {
         <section id="productCanvas" className="">
             <h1 className="text-6xl font-semibold">Take a closer Loook</h1>
             <div className="controls  ">
-                <p>MacBook Pro 16" in Silver / Space Black </p>
+                <p>MacBook Pro 16&quot; in Silver / Space Black </p>
 
                 <div className="colorControlerContainer ">
                     <div className="colorControler">
@@ -29,10 +29,10 @@ const ProductCanvas = () => {
                     <div className="sizeControlerContainer">  
                         <div className={`silver ${clsx(scale===0.01 ? ' bg-white text-black': 'bg-transparent text-white' )}`} 
                         onClick={()=>setScale(0.01)}
-                        ><p>14"</p> </div>
+                        ><p>14&quot;</p> </div>
                         <div className={`silver ${clsx(scale===0.08?' bg-white text-black': 'bg-transparent text-white' )}`} 
                         onClick={()=>setScale(0.08)}
-                        ><p>16"</p> </div>
+                        ><p>16&quot;</p> </div>
                     </div>
                 </div>
             </div>

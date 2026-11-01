@@ -9,7 +9,7 @@ const ANIMATION_DURATION = 1
 const OFFSET_DISTENCE =9
 
 const fadeMeshes = (group, opacity) =>{
-    if(!opacity) return 
+    if(opacity) return 
     group.traverse((child)=>{
         if(child.isMesh){
             child.material.transparent = true
